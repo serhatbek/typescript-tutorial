@@ -1,11 +1,13 @@
+import { useState } from 'react';
 import AddTodo from './components/AddTodo/AddTodo';
 
-function App() {
+const App: React.FC = () => {
+  const [todo, setTodo] = useState<string>('');
   return (
     <>
-      <AddTodo />
+      <AddTodo todo={todo} setTodo={setTodo} />
     </>
   );
-}
+};
 
 export default App;
