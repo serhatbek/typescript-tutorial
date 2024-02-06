@@ -37,6 +37,17 @@ h1 {
   line-height: 1.1;
 }
 
+p {
+  margin: 0;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

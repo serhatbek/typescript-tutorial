@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useState } from 'react';
 import AddTodo from './components/AddTodo/AddTodo';
 import { TodosProps } from './Types/Types';
 import TodoList from './components/TodoList/TodoList';
@@ -13,10 +13,14 @@ const App: React.FC = () => {
     setTodo('');
   };
 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <AddTodo todo={todo} setTodo={setTodo} addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList deleteTodo={deleteTodo} todos={todos} />
     </>
   );
 };
