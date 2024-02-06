@@ -1,27 +1,30 @@
-import { TodosProps } from '../../Types/Types';
+import { todoItemsProps } from '../../Types/Types';
 
 interface TodoListProps {
-  todos: TodosProps[];
+  todoItems: todoItemsProps[];
   deleteTodo: (id: number) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos, deleteTodo }) => {
+const TodoList: React.FC<TodoListProps> = ({ todoItems, deleteTodo }) => {
+  const handleDelete = (id: number) => {
+    deleteTodo(id);
+  };
+
   return (
-    <div style={{ marginBottom: '20px' }}>
-      {todos.map((item) => {
+    <div style={{ marginTop: '20px' }}>
+      {todoItems.map((item) => {
         return (
           <div
             key={item.id}
             style={{
-              marginTop: '20px',
-              height: '25px',
+              marginBottom: '20px',
               display: 'flex',
               justifyContent: 'space-between',
             }}
           >
             {item.message}
             <div>
-              <span onClick={() => deleteTodo(item.id)} className='btn'>
+              <span onClick={() => handleDelete(item.id)} className='btn'>
                 Delete
               </span>
             </div>

@@ -10,6 +10,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ todo, setTodo, addTodo }) => {
   };
 
   const handleKeyDown = (e: any) => {
+    if (todo === '') return;
     if (e.key === 'Enter') {
       addTodo();
     }

@@ -1,4 +1,4 @@
-export type TodosProps = {
+export type todoItemsProps = {
   id: number;
   message: string;
 };
