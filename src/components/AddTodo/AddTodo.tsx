@@ -1,22 +1,17 @@
 interface AddTodoProps {
   todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
+  addTodo: () => void;
 }
 
-const AddTodo: React.FC<AddTodoProps> = ({ todo, setTodo }) => {
-  const handleClick = () => {
-    console.log(todo);
-    setTodo('');
-  };
-
+const AddTodo: React.FC<AddTodoProps> = ({ todo, setTodo, addTodo }) => {
   const handleChange = (e: any) => {
     setTodo(e.target.value);
   };
 
   const handleKeyDown = (e: any) => {
     if (e.key === 'Enter') {
-      console.log(todo);
-      setTodo('');
+      addTodo();
     }
   };
   return (
@@ -28,7 +23,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ todo, setTodo }) => {
         type='text'
         placeholder='Görev Ekleyiniz.'
       />
-      <button onClick={handleClick} type='button'>
+      <button onClick={addTodo} type='button'>
         Ekle
       </button>
     </div>
