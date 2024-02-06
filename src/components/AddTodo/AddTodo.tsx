@@ -15,6 +15,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ todo, setTodo, addTodo }) => {
       addTodo();
     }
   };
+
   return (
     <div>
       <input
